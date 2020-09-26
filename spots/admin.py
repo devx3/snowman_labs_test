@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Spot, SpotImage
+from .models import Category, Spot, SpotImage, FavoriteSpot
 
 
 @admin.register(Category)
@@ -16,3 +16,8 @@ class SpotImageInline(admin.TabularInline):
 class SpotAdmin(admin.ModelAdmin):
     inlines = [SpotImageInline, ]
     list_display = ('name', 'latitude', 'longitude', 'created_at', 'updated_at', 'enabled')
+
+
+@admin.register(FavoriteSpot)
+class FavoriteSpotAdmin(admin.ModelAdmin):
+    list_display = ('user', 'spot', 'created_at')

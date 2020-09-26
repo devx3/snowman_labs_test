@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Base(models.Model):
@@ -24,9 +25,9 @@ class Category(Base):
 
 class Spot(Base):
     name = models.CharField(max_length=255)
-    latitude = models.DecimalField(max_digits=10, decimal_places=8)
-    longitude = models.DecimalField(max_digits=10, decimal_places=8)
-    category = models.ForeignKey(Category, related_name='spot', on_delete=models.DO_NOTHING)
+    latitude = models.CharField(max_length=50)
+    longitude = models.CharField(max_length=50)
+    category = models.ForeignKey(Category, related_name='spots', on_delete=models.DO_NOTHING)
 
     class Meta:
         ordering = ['id']
@@ -36,9 +37,17 @@ class Spot(Base):
 
 
 class SpotImage(Base):
-    spot = models.ForeignKey(Spot, related_name='images', on_delete=models.DO_NOTHING)
+    spot = models.ForeignKey(Spot, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(
         blank=True, upload_to='photos/%Y/%m/')
 
     def __str__(self):
         return self.image.name
+
+
+class FavoriteSpot(Base):
+    user = models.ForeignKey(User, related_name='favorites', on_delete=models.CASCADE)
+    spot = models.ForeignKey(Spot, related_name='favorites', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.spot.name

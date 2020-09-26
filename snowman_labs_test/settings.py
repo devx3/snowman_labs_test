@@ -8,6 +8,9 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
+
+Token: c0e257c45e37eee80e373ede8ad75f915bc23525
+
 """
 
 import os
@@ -25,7 +28,7 @@ SECRET_KEY = 'p(mdxp7t+^2g4!m-wq0ar)z#6zmyuhtfavs$i6&fya7r2qw=_v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list = []
 
 
 # Application definition
@@ -40,6 +43,8 @@ INSTALLED_APPS = [
 
     'django_filters',
     'rest_framework',
+    'rest_framework.authtoken',
+
     'spots',
 ]
 
@@ -125,7 +130,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'fixtures')
@@ -135,6 +140,7 @@ FIXTURE_DIRS = (
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',

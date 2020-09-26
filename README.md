@@ -67,7 +67,7 @@ Your task is to create a RESTful API for the app to consume and re
 # TODO: 
 
 - [x] Create Django Application
-- [ ] Creating Models 
+- [x] Creating Models 
 - [ ] Creating and Configure Routes
 - [ ] Configuring Views
 - [ ] Testing if all is working fine
