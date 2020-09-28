@@ -24,7 +24,7 @@ Your task is to create a RESTful API for the app to consume and re
 
 ## **As a logged in user, I want to:**
 
-- see a list of tourist spots
+- see a list of tourist spots 
 - search for tourist spots by name.
 - register a tourist spot (picture, name, geographical location and category).
 - add pictures to a tourist spot.

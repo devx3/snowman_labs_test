@@ -43,3 +43,11 @@ class SpotImage(Base):
 
     def __str__(self):
         return self.image.name
+
+
+class Bookmark(Base):
+    user = models.ForeignKey(User, related_name="bookmarks", on_delete=models.CASCADE)
+    spot = models.ForeignKey(Spot, related_name="bookmarks", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.spot.name

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Spot, SpotImage
+from .models import Category, Spot, SpotImage, Bookmark
 
 
 class SpotImageSerializer(serializers.ModelSerializer):
@@ -38,4 +38,14 @@ class CategorySerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at',
             'enabled',
+        )
+
+
+class BookmarkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Bookmark
+        fields = (
+            'id',
+            'user',
+            'spot',
         )
