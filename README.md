@@ -71,3 +71,23 @@ Your task is to create a RESTful API for the app to consume and re
 - [ ] Creating and Configure Routes
 - [ ] Configuring Views
 - [ ] Testing if all is working fine
+
+
+CONFIGURE 
+
+## Download the project
+Get inside the folder project and exec:
+
+`python manage.py makemigrations`
+`python manage.py migrate`
+
+## Create a superuser
+`python manage.py createsuperuser`
+
+## Load the Initial Data
+`python manage.py loaddata --app spots inital_data`
+
+## Generate a Token in admin area for your user to start use the API
+
+## Start the server
+`python manage.py runserver`

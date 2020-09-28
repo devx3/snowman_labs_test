@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Spot, SpotImage, FavoriteSpot
+from .models import Category, Spot, SpotImage
 
 
 class SpotImageSerializer(serializers.ModelSerializer):
@@ -9,7 +9,7 @@ class SpotImageSerializer(serializers.ModelSerializer):
 
 
 class SpotSerializer(serializers.ModelSerializer):
-    images = SpotImageSerializer(many=True, read_only=True)
+    images = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Spot
@@ -39,11 +39,3 @@ class CategorySerializer(serializers.ModelSerializer):
             'updated_at',
             'enabled',
         )
-
-
-class FavoriteSpotsSerializer(serializers.ModelSerializer):
-    model = FavoriteSpot
-    fields = (
-        'user',
-        'spot'
-    )
