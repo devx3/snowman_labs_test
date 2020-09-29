@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django.http import Http404
 
 from .models import Spot, Category, SpotImage, Bookmark
 from .serializers import (
@@ -88,7 +89,11 @@ class BookmarksViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, pk=None):
         if request.user.is_authenticated:
-            bookmark = Bookmark.objects.get(user_id=request.user.id, id=pk)
-            serializer = BookmarkSerializer(bookmark)
-            bookmark.delete()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            try:
+                instance = self.get_object()
+                self.perform_destroy(instance)
+            except Http404:
+                return Response({'msg': 'Not Found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({
+                'msg': f'{instance} deleted from bookmarks.'
+            }, status=status.HTTP_204_NO_CONTENT)

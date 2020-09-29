@@ -20,4 +20,4 @@ class SpotAdmin(admin.ModelAdmin):
 
 @admin.register(Bookmark)
 class BookmarkAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'user_id')
+    list_display = ('id', 'user')
