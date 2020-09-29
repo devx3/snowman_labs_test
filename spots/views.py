@@ -1,8 +1,10 @@
 from rest_framework import status
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from django.db.models import Q
 from django.http import Http404
+
 
 from .models import Spot, Category, SpotImage, Bookmark
 from .serializers import (
@@ -36,6 +38,21 @@ class SpotsViewSet(viewsets.ModelViewSet):
             file_serializer.save()
             return Response(file_serializer.data, status=status.HTTP_201_CREATED)
         return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SearchViewSet(mixins.RetrieveModelMixin,
+                    viewsets.GenericViewSet):
+    """
+    This viewset provides the search spot functionality
+    """
+
+    def list(self, request):
+        return Response(data={'msg': 'Not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    def retrieve(self, request, pk):
+        queryset = Spot.objects.filter(Q(name__icontains=pk))
+        serializer = SpotSerializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class CategoriesViewSet(viewsets.ModelViewSet):
