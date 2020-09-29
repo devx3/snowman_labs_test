@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
     'spots',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -132,9 +133,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-# FIXTURE_DIRS = (
-#     os.path.join(BASE_DIR, 'fixtures'),
-# )
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'fixtures'),
+)
 
 # DRF
 REST_FRAMEWORK = {
@@ -152,7 +153,7 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.UserRateThrottle',
     ),
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '5/minute',
-        'user': '10/minute',
+        'anon': '10/minute',
+        'user': '100/minute',
     }
 }

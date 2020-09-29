@@ -1,5 +1,25 @@
 # snowman_labs_test
 
+# CONFIGURE 
+
+## Download the project
+Get inside the folder project and exec:
+
+`python manage.py makemigrations`
+`python manage.py migrate`
+
+## Create a superuser
+`python manage.py createsuperuser`
+
+## Load the Initial Data
+`python manage.py loaddata initial_data.json`
+
+## Generate a Token in admin area for your user to start use the API
+
+## Start the server
+`python manage.py runserver`
+
+
 # **Project Requirements**
 
 Your team is developing an application for users to create and explore tourist spots on a map.
@@ -64,30 +84,4 @@ Your task is to create a RESTful API for the app to consume and re
 - Robustness.
 - Scalability.
 
-# TODO: 
 
-- [x] Create Django Application
-- [x] Creating Models 
-- [ ] Creating and Configure Routes
-- [ ] Configuring Views
-- [ ] Testing if all is working fine
-
-
-CONFIGURE 
-
-## Download the project
-Get inside the folder project and exec:
-
-`python manage.py makemigrations`
-`python manage.py migrate`
-
-## Create a superuser
-`python manage.py createsuperuser`
-
-## Load the Initial Data
-`python manage.py loaddata --app spots inital_data`
-
-## Generate a Token in admin area for your user to start use the API
-
-## Start the server
-`python manage.py runserver`

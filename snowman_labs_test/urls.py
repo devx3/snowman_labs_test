@@ -18,9 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from spots.urls import router
+from accounts.urls import AccountsRouter
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
-    path('api/v1/', include(router.urls))
+    path('api/v1/', include(router.urls)),
+    path('accounts/', include(AccountsRouter.urls))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
