@@ -4,7 +4,7 @@ This is an Test API created for Snowman Lab's Company.
 
 With this project I achieve a great experience and I had fun a lot! 
 
-So, let's get down to the configuration. 
+Let's configure our application!
 
 ## Before get start with the configuration... 
 
