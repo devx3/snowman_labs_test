@@ -27,13 +27,12 @@ Get inside the folder project and execute the following commands:
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 
-## Create a superuser
-If you want to, create a superuser to access the Admin Area (/admin)
-- `python manage.py createsuperuser`
-
 ## Load the Initial Data
 - `python manage.py loaddata initial_data.json`
 
+## Create a superuser
+If you want to, create a superuser to access the Admin Area (/admin)
+- `python manage.py createsuperuser`
 
 ## Start the server
 - `python manage.py runserver`
