@@ -14,6 +14,7 @@ Token: c0e257c45e37eee80e373ede8ad75f915bc23525
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,9 +27,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p(mdxp7t+^2g4!m-wq0ar)z#6zmyuhtfavs$i6&fya7r2qw=_v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS: list = []
+ALLOWED_HOSTS: list = ['*']
 
 
 # Application definition
@@ -159,3 +160,5 @@ REST_FRAMEWORK = {
         'user': '100/minute',
     }
 }
+
+django_heroku.settings(locals())
