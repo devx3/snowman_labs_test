@@ -11,31 +11,32 @@ So, let's get down to the configuration.
 ## Download the project
 
 First, you need to clone this repository: 
-`git clone https://github.com/devx3/snowman_labs_test.git`
+
+- `git clone https://github.com/devx3/snowman_labs_test.git`
 
 As we are using the Django Rest Framework (DRF) we need to install all the dependencies. For that, just execute: 
 
-`python3 -m pip install -r requirements.txt`
+- `python3 -m pip install -r requirements.txt`
 
 or just: 
 
-`pip install -r requirements.txt`
+- `pip install -r requirements.txt`
 
 Get inside the folder project and execute the following commands:
 
-`python manage.py makemigrations`
-`python manage.py migrate`
+- `python manage.py makemigrations`
+- `python manage.py migrate`
 
 ## Create a superuser
 If you want to, create a superuser to access the Admin Area (/admin)
-`python manage.py createsuperuser`
+- `python manage.py createsuperuser`
 
 ## Load the Initial Data
-`python manage.py loaddata initial_data.json`
+- `python manage.py loaddata initial_data.json`
 
 
 ## Start the server
-`python manage.py runserver`
+- `python manage.py runserver`
 
 ## We are good to go
 
