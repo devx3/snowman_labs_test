@@ -1,12 +1,23 @@
-# snowman_labs_test
+# Tourist Spot's API
+
 This is an Test API created for Snowman Lab's Company. 
 
 With this project I achieve a great experience and I had fun a lot! 
 
 So, let's get down to the configuration. 
 
+## Before get start with the configuration... 
 
-# CONFIGURE 
+Check the [demo here](https://snowmanlabs.herokuapp.com/)
+Access the [admin area](https://snowmanlabs.herokuapp.com/)
+**Login:** admin
+**pass:** 123456
+
+And the last is the link to the [API's documentation](https://documenter.getpostman.com/view/7747875/TVRd9r4d)
+
+-----
+
+# So now, let's configure our environment
 
 ## Download the project
 
@@ -30,18 +41,24 @@ Get inside the folder project and execute the following commands:
 ## Load the Initial Data
 - `python manage.py loaddata initial_data.json`
 
-## Create a superuser
+## Create a superuser (optional, because the initial data already came with the admin user)
 If you want to, create a superuser to access the Admin Area (/admin)
 - `python manage.py createsuperuser`
 
 ## Start the server
 - `python manage.py runserver`
 
-## We are good to go
+## We're good to go
 
 The next step is access our API documentation through this [documentation](https://documenter.getpostman.com/view/7747875/TVRd9r4d).
 
-# Thank you! 
+You can see a demo here: https://snowmanlabs.herokuapp.com/
+
+**Admin area:** https://snowmanlabs.herokuapp.com/admin
+**Login:** admin
+**pass:** 123456
+
+# Happy code! 
 
 ---------------
 
