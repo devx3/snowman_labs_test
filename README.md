@@ -9,9 +9,11 @@ So, let's get down to the configuration.
 ## Before get start with the configuration... 
 
 Check the [demo here](https://snowmanlabs.herokuapp.com/)
+
 Access the [admin area](https://snowmanlabs.herokuapp.com/)
-**Login:** admin
-**pass:** 123456
+
+- **Login:** admin
+- **pass:** 123456
 
 And the last is the link to the [API's documentation](https://documenter.getpostman.com/view/7747875/TVRd9r4d)
 
