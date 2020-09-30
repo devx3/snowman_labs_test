@@ -22,11 +22,18 @@ class SpotsViewSet(viewsets.ModelViewSet):
     queryset = Spot.objects.all()
     serializer_class = SpotSerializer
 
-    @action(detail=True, methods=['get'])
+    @action(detail=True, methods=['get', 'delete'])
     def images(self, request, pk=None):
-        images = SpotImage.objects.filter(spot_id=pk)
-        serializer = SpotImageSerializer(images, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.method == 'GET':
+            images = SpotImage.objects.filter(spot_id=pk)
+            serializer = SpotImageSerializer(images, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        if request.method == 'DELETE':
+            image_id = request.GET.get('image_id')
+            result, image = SpotImage.objects.filter(id=image_id).delete()
+            if result > 0:
+                return Response({'Image was deleted'}, status=status.HTTP_200_OK)
+            return Response({'Image not found'}, status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=True, methods=['post'])
     def upload_image(self, request, pk=None):
