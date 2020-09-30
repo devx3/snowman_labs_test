@@ -57,8 +57,9 @@ The next step is access our API documentation through this [documentation](https
 You can see a demo here: https://snowmanlabs.herokuapp.com/
 
 **Admin area:** https://snowmanlabs.herokuapp.com/admin
-**Login:** admin
-**pass:** 123456
+
+- **Login:** admin
+- **pass:** 123456
 
 # Happy code! 
 
