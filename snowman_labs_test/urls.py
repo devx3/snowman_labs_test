@@ -19,8 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from spots.urls import router
 from accounts.urls import AccountsRouter
+from .views import index
 
 urlpatterns = [
+    path('', index, name="index"),
     path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
     path('api/v1/', include(router.urls)),
