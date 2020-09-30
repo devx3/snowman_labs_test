@@ -1,23 +1,49 @@
 # snowman_labs_test
+This is an Test API created for Snowman Lab's Company. 
+
+With this project I achieve a great experience and I had fun a lot! 
+
+So, let's get down to the configuration. 
+
 
 # CONFIGURE 
 
 ## Download the project
-Get inside the folder project and exec:
+
+First, you need to clone this repository: 
+`git clone https://github.com/devx3/snowman_labs_test.git`
+
+As we are using the Django Rest Framework (DRF) we need to install all the dependencies. For that, just execute: 
+
+`python3 -m pip install -r requirements.txt`
+
+or just: 
+
+`pip install -r requirements.txt`
+
+Get inside the folder project and execute the following commands:
 
 `python manage.py makemigrations`
 `python manage.py migrate`
 
 ## Create a superuser
+If you want to, create a superuser to access the Admin Area (/admin)
 `python manage.py createsuperuser`
 
 ## Load the Initial Data
 `python manage.py loaddata initial_data.json`
 
-## Generate a Token in admin area for your user to start use the API
 
 ## Start the server
 `python manage.py runserver`
+
+## We are good to go
+
+The next step is access our API documentation through this [documentation](https://documenter.getpostman.com/view/7747875/TVRd9r4d).
+
+# Thank you! 
+
+---------------
 
 
 # **Project Requirements**
@@ -25,15 +51,6 @@ Get inside the folder project and exec:
 Your team is developing an application for users to create and explore tourist spots on a map.
 
 Your task is to create a RESTful API for the app to consume and register this information.
-
-# **Chooses**
-
-- Python
-- Django Framework
-- SQLite
-- Unittests
-- Docker
-- Git
 
 # **User Stories**
 
